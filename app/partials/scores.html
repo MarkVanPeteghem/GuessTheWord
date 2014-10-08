@@ -1,0 +1,19 @@
+<div id="scores">
+    <table id="scores-table">
+        <colgroup>
+            <col class="score-word">
+            <col class="score-nrTries">
+            <col class="score-language">
+        </colgroup>
+        <tr>
+            <th>Word</th>
+            <th>Tries</th>
+            <th>Language</th>
+        </tr>                    
+        <tr ng-repeat="score in scores">
+            <td class="score-word">{{score.word}}</td>
+            <td class="score-nrTries">{{score.nrTries}}</td>
+            <td class="score-language">{{score.lang}}</td>
+        </tr>
+    </table>
+</div>

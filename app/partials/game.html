@@ -1,0 +1,30 @@
+<div id="game">
+    <h1>Guess the word 2</h1>
+
+    <div id="letters">
+        <span ng-repeat="letter in guesses" class="letter">
+            {{letter.letter}}
+        </span>
+    </div>
+
+    <form class="animate-hide" ng-submit="guess()" ng-show="playing">
+        <input type="text" ng-model="guessedLetter" size="1">
+        <input class="btn-primary" type="submit" value="Guess">
+    </form>
+
+    <form class="animate-hide" ng-submit="stop()" ng-show="playing">
+        <input class="btn-primary" type="submit" value="Stop">
+    </form>
+
+    <p>{{message}}</p>
+
+    <div ng-hide="playing">
+        Enter the word length and click Start.
+        <form ng-submit="start()">
+            <input type="text" ng-model="nrLetters" size="1" />
+            <select ng-model="language" ng-options="lang for lang in languages">
+            </select>
+            <input class="btn-primary" type="submit" value="Start"/>
+        </form>
+    </div>
+</div>
